@@ -1,0 +1,18 @@
+---
+import { partners } from "../content/partners/partners.astro"
+---
+
+<section class="bg-white p-10">
+  <h1 class="text-center text-[#0122BA] text-4xl md:text-7xl font-arca">
+    Official Partners
+  </h1>
+  <div
+    class="w-full flex flex-row flex-wrap justify-around py-10"
+  >
+  {
+    partners.map((partner) => (
+      <img src={partner.pictureUrl} alt={partner.name} class="w-24 md:w-52 h-auto" />
+    ))
+  }
+  </div>
+</section>
