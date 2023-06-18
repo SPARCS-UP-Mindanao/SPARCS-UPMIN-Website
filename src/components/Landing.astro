@@ -1,10 +1,19 @@
 ---
-    import landingPicture from '/landingPic.png' 
+import landingPicture from "/landingPic.png";
 
-    const backgroundGradient = "bg-gradient-to-b from-[#0122BA] from-0% via-[#CAD4FF] via-77% to-[#E5EAFF] to-100%"
+const backgroundGradient =
+  "bg-gradient-to-b from-[#0122BA] from-0% via-[#CAD4FF] via-77% to-[#FFFFFF] to-100%";
 ---
 
-<section class={`h-screen flex flex-col items-center justify-end ${backgroundGradient}`}>
-    <h1 class="font-arca">SPARCS</h1>
-    <img class="" src={landingPicture} alt="">
+<section class={`pt-32 md:h-screen h-screen/2 relative flex flex-col items-center justify-start ${backgroundGradient}`}>
+  <div class="h-full relative flex flex-col items-center justify-start">
+    <h1 class="font-arca md:text-15xl text-8xl text-white font-extrabold">
+      SPARCS
+    </h1>
+    <img
+      class="absolute md:top-40 top-16 md:max-w-4xl"
+      src={landingPicture}
+      alt="SPARCS"
+    />
+  </div>
 </section>
