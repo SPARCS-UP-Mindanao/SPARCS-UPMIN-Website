@@ -22,7 +22,7 @@ module.exports = {
 			height: {
 				"screen/2": "50vh",
 				"screen/3": "calc(100vh / 3)",
-			}
+			},
 		},
 	},
 	plugins: [],
