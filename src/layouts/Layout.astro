@@ -1,6 +1,6 @@
 ---
-import NavBar from '../components/NavBar.jsx';
-import Favicon from '/logo.ico';
+import NavBar from "../components/NavBar.jsx";
+import Favicon from "/logo.ico";
 export interface Props {
 	title: string;
 }
@@ -12,11 +12,17 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href={Favicon} />
-		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+		<link
+			href="https://fonts.googleapis.com/css?family=Raleway"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -35,9 +41,9 @@ const { title } = Astro.props;
 		src: url("/fonts/ArcaMajora3.otf") format("opentype");
 	}
 
-	.blurNav{
+	.blurNav {
 		transition: 0.3s all ease-in-out;
-		background: #0122BA;
+		background: #0122ba;
 		opacity: 0.8;
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);
@@ -45,14 +51,21 @@ const { title } = Astro.props;
 
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #FFFFFF;;
+		background-color: #ffffff;
+		scroll-behavior: smooth;
+		scroll-padding: 15rem;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 </style>
