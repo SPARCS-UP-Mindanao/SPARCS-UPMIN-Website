@@ -17,12 +17,22 @@ function Header() {
     >
       <img src={logo} alt="SPARCS" className="w-16"/>
       <nav className="flex flex-row md:gap-10 gap-3 z-50">
-        <a href="#about" className="text-white font-montserrat md:text-lg">About</a>
-        <a href="#events" className="text-white font-montserrat md:text-lg">Events</a>
-        <a href="#partners" className="text-white font-montserrat md:text-lg"
-        >Partners</a
-        >
-        <a href="#contact" className="text-white font-montserrat md:text-lg">Contact</a>
+        <a href="#about" className="text-white font-montserrat md:text-lg group transition duration-300">
+          About
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-white"></span>
+        </a>
+        <a href="#events" className="text-white font-montserrat md:text-lg group transition duration-300">
+          Events
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-white"></span>
+        </a>
+        <a href="#partners" className="text-white font-montserrat md:text-lg group transition duration-300">
+          Partners
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-white"></span>
+        </a>
+        <a href="#contact" className="text-white font-montserrat md:text-lg group transition duration-300">
+          Contact
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-white"></span>
+        </a>
       </nav>
     </header>
   );
