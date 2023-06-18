@@ -17,7 +17,7 @@ module.exports = {
 				}
 			},
 			fontSize: {
-				'15xl': '15rem',
+				'13xl': '13rem',
 			},
 			height: {
 				"screen/2": "50vh",
