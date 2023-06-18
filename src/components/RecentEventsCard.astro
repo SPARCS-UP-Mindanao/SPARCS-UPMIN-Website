@@ -1,0 +1,27 @@
+---
+const { event } = Astro.props;
+const { title, pictureUrl, date, description } = event;
+---
+
+<div
+  class="w-[240px] h-[352.5px] lg:w-[320px] lg:h-[470px] border rounded-2xl bg-[#CAD4FF]"
+>
+  <div class="w-full h-4/6">
+    <img
+      src={pictureUrl}
+      alt={title}
+      class="rounded-t-2xl scale-100 hover:scale-105 ease-in duration-100"
+    />
+  </div>
+  <div class="p-2 lg:p-3 h-2/6">
+    <h1
+      class="text-xl lg:text-2xl mb-1 lg:mb-2 font-raleway truncate font-bold"
+    >
+      {title}
+    </h1>
+    <p class="text-sm lg:text-[16px] text-gray-500 mb-3">
+      {date}
+    </p>
+    <p class="text-sm lg:text-lg truncate font-montserrat">{description}</p>
+  </div>
+</div>
