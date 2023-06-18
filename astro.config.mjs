@@ -5,7 +5,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://arjsarmiento.github.io',
-  base: '/SPARCS-UPMIN-Website',
+  site: 'https://www.sparcsup.com',
   integrations: [tailwind(), react()]
 });
