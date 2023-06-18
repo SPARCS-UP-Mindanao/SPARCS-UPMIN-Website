@@ -17,12 +17,14 @@ module.exports = {
 				}
 			},
 			fontSize: {
-				'15xl': '15rem',
+				'13xl': '13rem',
 			},
 			height: {
 				"screen/2": "50vh",
 				"screen/3": "calc(100vh / 3)",
-			},
+				"30rem": "30rem",
+				"55rem": "55rem",
+			}
 		},
 	},
 	plugins: [],

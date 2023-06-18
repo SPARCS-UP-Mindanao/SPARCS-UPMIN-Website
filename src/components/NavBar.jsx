@@ -15,7 +15,7 @@ function Header() {
     <header
       className={`fixed top-0 w-full flex flex-row items-center justify-around md:py-5 py-3 z-40 ${scroll ? 'blurNav' : ''}`}
     >
-      <img src={logo} alt="SPARCS" />
+      <img src={logo} alt="SPARCS" className="w-16"/>
       <nav className="flex flex-row md:gap-10 gap-3 z-50">
         <a href="#about" className="text-white font-montserrat md:text-lg">About</a>
         <a href="#events" className="text-white font-montserrat md:text-lg">Events</a>
