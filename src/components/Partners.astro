@@ -2,7 +2,7 @@
 import { partners } from "../content/partners/partners.astro"
 ---
 
-<section class="bg-white p-10" id="partners">
+<section class="bg-white px-10 py-16" id="partners">
   <h1 class="text-center text-[#0122BA] text-4xl md:text-7xl font-arca">
     Official Partners
   </h1>
@@ -11,7 +11,7 @@ import { partners } from "../content/partners/partners.astro"
   >
   {
     partners.map((partner) => (
-      <img src={partner.pictureUrl} alt={partner.name} class="w-full max-w-sm" />
+      <img src={partner.pictureUrl} alt={partner.name} class="w-full max-w-2x md:w-56" />
     ))
   }
   </div>
