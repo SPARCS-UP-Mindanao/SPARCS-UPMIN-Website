@@ -21,11 +21,11 @@ async function fetchEvents() {
   }
 }
 
-async function onMount() {
+async function getEventList() {
   event = await fetchEvents();
 }
 
-onMount();
+getEventList();
 
 export const eventList: SparcsEvent[] = [
   {
