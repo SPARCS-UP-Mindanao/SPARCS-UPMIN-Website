@@ -1,21 +1,19 @@
 ---
-import type { TechTixEventData } from "../content/eventList/eventList";
-import type { SparcsEvent } from "../models/SparcsEvent.astro";
+import moment from "moment";
 
-interface Props {
-  event: SparcsEvent | TechTixEventData;
-}
 const { event } = Astro.props;
 const { title, bannerUrl, eventSource, description } = event;
 
+const isSameDayEvent = moment(event.startDate).isSame(event.endDate, "day");
 const getDate = () => {
-  if (eventSource === "TechTix") {
-    const { startDate, endDate } = event;
-    return `${startDate} ~ ${endDate}`;
-  } else {
-    const { date } = event;
-    return date;
+  if (isSameDayEvent) {
+    return `${moment(event.startDate).format("ll, h:mm A")} - ${moment(
+      event.endDate
+    ).format("LT")}`;
   }
+  return `${moment(event.startDate).format("ll")} - ${moment(
+    event.endDate
+  ).format("ll")}`;
 };
 ---
 

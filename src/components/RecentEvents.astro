@@ -1,8 +1,13 @@
 ---
 import RecentEventsCard from "./RecentEventsCard.astro";
 import { getEventList } from "../content/eventList/eventList";
+import moment from "moment";
 
 const eventList = await getEventList();
+
+eventList
+  .sort((a, b) => moment(a.startDate).diff(moment(b.startDate)))
+  .reverse();
 ---
 
 <section

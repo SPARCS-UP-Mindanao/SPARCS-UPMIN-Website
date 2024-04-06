@@ -1,10 +1,10 @@
 ---
 export interface SparcsEvent {
-  eventSource: "PreviousEvents";
   eventId: string;
   title: string;
   bannerUrl: string;
-  date: string | Date;
+  startDate: string | Date;
+  endDate: string | Date;
   description: string | null;
 }
 ---
