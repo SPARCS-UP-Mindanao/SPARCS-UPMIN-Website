@@ -1,6 +1,22 @@
 ---
+import type { TechTixEventData } from "../content/eventList/eventList";
+import type { SparcsEvent } from "../models/SparcsEvent.astro";
+
+interface Props {
+  event: SparcsEvent | TechTixEventData;
+}
 const { event } = Astro.props;
-const { title, pictureUrl, date, description } = event;
+const { title, bannerUrl, eventSource, description } = event;
+
+const getDate = () => {
+  if (eventSource === "TechTix") {
+    const { startDate, endDate } = event;
+    return `${startDate} ~ ${endDate}`;
+  } else {
+    const { date } = event;
+    return date;
+  }
+};
 ---
 
 <div
@@ -9,7 +25,7 @@ const { title, pictureUrl, date, description } = event;
 >
   <div class="w-full h-4/6 overflow-hidden">
     <img
-      src={pictureUrl}
+      src={bannerUrl}
       alt={title}
       class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer"
     />
@@ -21,7 +37,7 @@ const { title, pictureUrl, date, description } = event;
       {title}
     </h1>
     <p class="text-sm md:text-[16px] text-gray-500 mb-3">
-      {date}
+      {getDate()}
     </p>
     <p class="text-sm md:text-lg font-montserrat line-clamp-2">{description}</p>
   </div>

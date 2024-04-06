@@ -1,6 +1,8 @@
 ---
 import RecentEventsCard from "./RecentEventsCard.astro";
-import { eventList } from "../content/eventList/eventList.astro";
+import { getEventList } from "../content/eventList/eventList";
+
+const eventList = await getEventList();
 ---
 
 <section
@@ -12,11 +14,6 @@ import { eventList } from "../content/eventList/eventList.astro";
   <div
     class="w-full flex flex-row flex-wrap justify-center p-4 md:p-8 gap-8 md:gap-16"
   >
-    {
-      eventList
-        .slice(0)
-        .reverse()
-        .map((event) => <RecentEventsCard event={event} key={event.id} />)
-    }
+    {eventList.map((event) => <RecentEventsCard event={event} />)}
   </div>
 </section>

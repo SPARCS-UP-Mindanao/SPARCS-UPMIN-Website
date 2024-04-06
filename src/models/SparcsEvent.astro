@@ -1,8 +1,9 @@
 ---
 export interface SparcsEvent {
-  id: number;
+  eventSource: "PreviousEvents";
+  eventId: string;
   title: string;
-  pictureUrl: string;
+  bannerUrl: string;
   date: string | Date;
   description: string | null;
 }
