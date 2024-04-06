@@ -1,11 +1,16 @@
 ---
 import type { SparcsEvent } from "../../models/SparcsEvent.astro";
-import { onMount } from "astro";
 
 const TECHFIX_API =
   "https://ru009rx9sk.execute-api.ap-southeast-1.amazonaws.com/dev";
 
-let event = [];
+interface EventData {
+  eventId: string;
+  name: string;
+  bannerUrl: string;
+  startDate: string | Date;
+  description: string | null;
+}
 
 async function fetchEvents() {
   try {
@@ -22,10 +27,16 @@ async function fetchEvents() {
 }
 
 async function getEventList() {
-  event = await fetchEvents();
-}
+  const events = await fetchEvents();
 
-getEventList();
+  return events.map((event: EventData) => ({
+    id: event.eventId,
+    title: event.name,
+    pictureUrl: event.bannerUrl,
+    date: event.startDate,
+    description: event.description,
+  }));
+}
 
 export const eventList: SparcsEvent[] = [
   {
