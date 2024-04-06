@@ -1,5 +1,5 @@
 ---
-import logo from "/logo.png";
+import logo_word from "/logo_word.png";
 import location from "/icons/icon-loc.svg";
 import iconFb from "/icons/icon-fb.svg";
 import iconLinkedin from "/icons/icon-linkedin.svg";
@@ -14,12 +14,13 @@ import iconPhone from "/icons/icon-phone.svg";
 >
     <div class="flex flex-col md:items-center">
         <div class="flex flex-col gap-5">
-            <div class="flex md:items-center gap-5">
-                <img src={logo} alt="SPARCS UP Min Logo" class="w-16 h-16" />
-                <div class="block">
-                    <p class="font-raleway">UP Mindanao</p>
-                    <p class="font-arca font-bold text-3xl">SPARCS</p>
-                </div>
+            <div class="flex flex-col">
+                <p class="font-raleway text-xl mb-[-18px]">UP Mindanao</p>
+                <img
+                  src={logo_word}
+                  alt="SPARCS UP Min Logo"
+                  class="max-w-[250px] md:max-w-full"
+                />
             </div>
             <div class="flex md:items-center gap-5">
                 <img src={location} alt="Location Icon" />
@@ -66,5 +67,5 @@ import iconPhone from "/icons/icon-phone.svg";
             </div>
         </div>
     </div>
-    <p>@ 2023 UPMin SPARCS</p>
+    <p>@ 2024 UPMin SPARCS</p>
 </footer>
