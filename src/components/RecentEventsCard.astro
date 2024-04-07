@@ -2,7 +2,9 @@
 import moment from "moment";
 
 const { event } = Astro.props;
-const { title, bannerUrl, eventSource, description } = event;
+const { title, bannerUrl, description } = event;
+
+const Logo = "../../public/logo.png";
 
 const getDate = () => {
   const isSameDayEvent = moment(event.startDate).isSame(event.endDate, "day");
@@ -35,11 +37,17 @@ const getDate = () => {
   class="w-[240px] h-[352.5px] md:w-[320px] md:h-[470px] rounded-2xl bg-[#CAD4FF] overflow-hidden"
   id="events"
 >
-  <div class="w-full h-4/6 overflow-hidden">
+  <div class="w-full h-4/6 overflow-hidden bg-no-repeat bg-cover">
     <img
-      src={bannerUrl}
+      src={bannerUrl ? bannerUrl : Logo}
       alt={title}
-      class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer"
+      class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
+      onerror="this.style.display='none'"
+    />
+    <img
+      src={Logo}
+      alt={title}
+      class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-contain"
     />
   </div>
   <div class="p-2 md:p-3 h-2/6">
