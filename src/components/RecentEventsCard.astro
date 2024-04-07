@@ -38,15 +38,10 @@ const getDate = () => {
 >
     <div class="w-full h-4/6 overflow-hidden bg-no-repeat bg-cover">
         <img
-            src={bannerUrl ? bannerUrl : Logo}
+            src={bannerUrl}
             alt={title}
             class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
             onerror="this.style.display='none'"
-        />
-        <img
-            src={Logo}
-            alt="Fallback Image"
-            class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
         />
     </div>
     <div class="p-2 md:p-3 h-2/6">
