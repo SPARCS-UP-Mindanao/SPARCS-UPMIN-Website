@@ -37,7 +37,7 @@ export const getEventList = async () => {
       startDate: event.startDate,
       endDate: event.endDate,
       description: event.description,
-    })
+    }),
   );
 
   const previousEvents: SparcsEvent[] = [
@@ -52,7 +52,7 @@ export const getEventList = async () => {
     },
     {
       eventId: "2",
-      title: "Career Talks",
+      title: "Career Talks 2022",
       bannerUrl: "./img/Career.png",
       startDate: "October 28, 2022",
       endDate: "October 28, 2022",
@@ -94,6 +94,15 @@ export const getEventList = async () => {
       endDate: "May, 2023",
       description:
         "The SPARCS Membership Application Process 2023 was a significant event for the Society of Programmers and Refined Computers (SPARCS). This annual process offered ongoing UP Mindanao students pursuing a degree in BS Computer Science the opportunity to join a community of career-driven individuals. SPARCS, a recognized organization within the university, aims to guide Computer Science students and provide a platform for skill development, networking, and exploring tech industry opportunities. Through strategic partnerships with tech organizations and IT-related university groups, SPARCS empowers and educates the surrounding communities in computer, information, and communications technology. The Membership Application Process 2023 served as a comprehensive and rigorous recruitment mechanism, introducing new members, fostering relationships, evaluating potential, and igniting interest in Computer Science while supporting skill development and career growth.",
+    },
+    {
+      eventId: "7",
+      title: "Bugkos 2023",
+      bannerUrl: "./img/Bugkos2023.jpeg",
+      startDate: "October 14, 2023",
+      endDate: "October 15, 2023",
+      description:
+        "🎉 𝗧𝗵𝗲 𝗪𝗮𝗶𝘁 𝗜𝘀 𝗢𝘃𝗲𝗿! 𝗧𝗼𝗱𝗮𝘆 𝗶𝘀 𝘁𝗵𝗲 𝗗𝗮𝘆 – 𝗕𝘂𝗴𝗸𝗼𝘀 𝟮𝟬𝟮𝟯 𝗜𝘀 𝗛𝗲𝗿𝗲!🥳🤝 But wait, before you get too carried away with the excitement, a quick reminder: check out our handy primer and group chats for all the deets you need.",
     },
   ];
 
