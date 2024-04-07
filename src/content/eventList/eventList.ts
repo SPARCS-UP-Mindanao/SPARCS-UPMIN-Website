@@ -98,7 +98,7 @@ export const getEventList = async () => {
     {
       eventId: "7",
       title: "Bugkos 2023",
-      bannerUrl: "./img/Bugkos2023.jpeg",
+      bannerUrl: "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_2.png",
       startDate: "October 14, 2023",
       endDate: "October 15, 2023",
       description:
