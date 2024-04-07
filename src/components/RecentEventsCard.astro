@@ -1,10 +1,10 @@
 ---
 import moment from "moment";
+import RichTextContent from "../components/RichTextContent.jsx";
 
 const { event } = Astro.props;
 const { title, bannerUrl, description } = event;
-
-const Logo = "../../public/logo.png";
+const Logo = "../logo.png";
 
 const getDate = () => {
   const isSameDayEvent = moment(event.startDate).isSame(event.endDate, "day");
@@ -59,6 +59,8 @@ const getDate = () => {
     <p class="text-sm md:text-[16px] text-gray-500 mb-3">
       {getDate()}
     </p>
-    <p class="text-sm md:text-lg font-montserrat line-clamp-2">{description}</p>
+    <p class="text-sm md:text-lg font-montserrat line-clamp-2">
+      <RichTextContent client:load content={description} />
+    </p>
   </div>
 </div>
