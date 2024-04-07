@@ -10,8 +10,7 @@ export interface TechTixEventData {
   description: string | null;
 }
 
-const TECHTIX_API =
-  "https://ru009rx9sk.execute-api.ap-southeast-1.amazonaws.com/dev/events";
+const TECHTIX_API = import.meta.env.TECHTIX_API + "/events";
 export const fetchEvents = async () => {
   try {
     const response = await fetch(TECHTIX_API);

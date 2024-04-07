@@ -4,16 +4,30 @@ import moment from "moment";
 const { event } = Astro.props;
 const { title, bannerUrl, eventSource, description } = event;
 
-const isSameDayEvent = moment(event.startDate).isSame(event.endDate, "day");
 const getDate = () => {
+  const isSameDayEvent = moment(event.startDate).isSame(event.endDate, "day");
+
+  if (
+    isSameDayEvent &&
+    moment(event.startDate).format("ll, h:mm A") ===
+      moment(event.endDate).format("ll, h:mm A")
+  ) {
+    return `${moment(event.startDate).format("ll, h:mm A")}`;
+  }
+
   if (isSameDayEvent) {
     return `${moment(event.startDate).format("ll, h:mm A")} - ${moment(
       event.endDate
     ).format("LT")}`;
   }
-  return `${moment(event.startDate).format("ll")} - ${moment(
-    event.endDate
-  ).format("ll")}`;
+
+  if (event.endDate) {
+    return `${moment(event.startDate).format("ll")} - ${moment(
+      event.endDate
+    ).format("ll")}`;
+  } else {
+    return `${moment(event.startDate).format("ll")}`;
+  }
 };
 ---
 
