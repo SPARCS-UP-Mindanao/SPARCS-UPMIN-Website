@@ -1,6 +1,5 @@
 ---
 import moment from "moment";
-import RichTextContent from "../components/RichTextContent.jsx";
 
 const { event } = Astro.props;
 const { title, bannerUrl, description } = event;
@@ -59,8 +58,9 @@ const getDate = () => {
     <p class="text-sm md:text-[16px] text-gray-500 mb-3">
       {getDate()}
     </p>
-    <p class="text-sm md:text-lg font-montserrat line-clamp-2">
-      <RichTextContent client:load content={description} />
-    </p>
+    <div
+      class="text-sm md:text-lg font-montserrat line-clamp-2"
+      set:html={description}
+    />
   </div>
 </div>
