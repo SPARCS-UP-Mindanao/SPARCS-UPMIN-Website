@@ -1,9 +1,10 @@
 ---
-import logo from "/logo.png";
+import logo_word from "/logo_word.png";
 import location from "/icons/icon-loc.svg";
 import iconFb from "/icons/icon-fb.svg";
 import iconLinkedin from "/icons/icon-linkedin.svg";
 import iconIg from "/icons/icon-ig.svg";
+import icontiktok from "/icons/icon-tiktok.svg";
 import iconMail from "/icons/icon-mail.svg";
 import iconPhone from "/icons/icon-phone.svg";
 ---
@@ -13,19 +14,21 @@ import iconPhone from "/icons/icon-phone.svg";
     id="contact"
 >
     <div class="flex flex-col md:items-center">
-        <div class="flex flex-col gap-5">
-            <div class="flex md:items-center gap-5">
-                <img src={logo} alt="SPARCS UP Min Logo" class="w-16 h-16" />
-                <div class="block">
-                    <p class="font-raleway">UP Mindanao</p>
-                    <p class="font-arca font-bold text-3xl">SPARCS</p>
-                </div>
+        <div class="flex flex-col gap-7">
+            <div class="flex flex-col justify-between h-full">
+                <img
+                  src={logo_word}
+                  alt="SPARCS UP Min Logo"
+                  class="max-w-[250px] md:max-w-full mr-14"
+                />
             </div>
-            <div class="flex md:items-center gap-5">
+            <div class="flex md:items-start gap-5">
                 <img src={location} alt="Location Icon" />
                 <p>
-                    College of Science and Mathematics, University of the Philippines Mindanao, 
-                    Tugbok District, Mintal, Davao City, Philippines 8000
+                    <a href="https://maps.app.goo.gl/eMz8wgERVvcr2LTd9" target="_blank" class="hover:underline">
+                        College of Science and Mathematics, University of the Philippines Mindanao, 
+                        Tugbok District, Mintal, Davao City, Philippines 8000
+                    </a>
                 </p>
             </div>
         </div>
@@ -47,6 +50,10 @@ import iconPhone from "/icons/icon-phone.svg";
                 <img src={iconIg} alt="Instagram" />
                 <a target="_blank" class='hover:underline' href="https://www.instagram.com/sparcs_upmin/">/sparcs_upmin</a>
             </div>
+            <div class="flex gap-2">
+                <img src={icontiktok} alt="TikTok" />
+                <a target="_blank" class='hover:underline' href="https://www.tiktok.com/@sparcs_upmin?is_from_webapp=1&sender_device=pc">/@sparcs_upmin</a>
+            </div>
         </div>
     </div>
     <div class="flex flex-col md:items-center">
@@ -66,5 +73,5 @@ import iconPhone from "/icons/icon-phone.svg";
             </div>
         </div>
     </div>
-    <p>@ 2023 UPMin SPARCS</p>
+    <p>@ 2024 UP Mindanao SPARCS</p>
 </footer>
