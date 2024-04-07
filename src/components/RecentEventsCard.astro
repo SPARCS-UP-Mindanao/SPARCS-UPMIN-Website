@@ -1,28 +1,66 @@
 ---
+import moment from "moment";
+
 const { event } = Astro.props;
-const { title, pictureUrl, date, description } = event;
+const { title, bannerUrl, description } = event;
+const Logo = "../logo.png";
+
+const getDate = () => {
+    const isSameDayEvent = moment(event.startDate).isSame(event.endDate, "day");
+
+    if (
+        isSameDayEvent &&
+        moment(event.startDate).format("ll, h:mm A") ===
+            moment(event.endDate).format("ll, h:mm A")
+    ) {
+        return `${moment(event.startDate).format("ll, h:mm A")}`;
+    }
+
+    if (isSameDayEvent) {
+        return `${moment(event.startDate).format("ll, h:mm A")} - ${moment(
+            event.endDate
+        ).format("LT")}`;
+    }
+
+    if (event.endDate) {
+        return `${moment(event.startDate).format("ll")} - ${moment(
+            event.endDate
+        ).format("ll")}`;
+    } else {
+        return `${moment(event.startDate).format("ll")}`;
+    }
+};
 ---
 
 <div
-  class="w-[240px] h-[352.5px] md:w-[320px] md:h-[470px] rounded-2xl bg-[#CAD4FF] overflow-hidden"
-  id="events"
+    class="w-[240px] h-[352.5px] md:w-[320px] md:h-[470px] rounded-2xl bg-[#CAD4FF] overflow-hidden"
+    id="events"
 >
-  <div class="w-full h-4/6 overflow-hidden">
-    <img
-      src={pictureUrl}
-      alt={title}
-      class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer"
-    />
-  </div>
-  <div class="p-2 md:p-3 h-2/6">
-    <h1
-      class="text-xl md:text-2xl mb-1 md:mb-2 line-clamp-1 font-raleway font-bold"
-    >
-      {title}
-    </h1>
-    <p class="text-sm md:text-[16px] text-gray-500 mb-3">
-      {date}
-    </p>
-    <p class="text-sm md:text-lg font-montserrat line-clamp-2">{description}</p>
-  </div>
+    <div class="w-full h-4/6 overflow-hidden bg-no-repeat bg-cover">
+        <img
+            src={bannerUrl ? bannerUrl : Logo}
+            alt={title}
+            class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
+            onerror="this.style.display='none'"
+        />
+        <img
+            src={Logo}
+            alt="Fallback Image"
+            class="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
+        />
+    </div>
+    <div class="p-2 md:p-3 h-2/6">
+        <h1
+            class="text-xl md:text-lg mb-1 md:mb-2 font-raleway font-bold text-wrap"
+        >
+            {title}
+        </h1>
+        <p class="text-sm md:text-md text-gray-500 mb-3">
+            {getDate()}
+        </p>
+        <div
+            class="text-sm md:text-md font-montserrat line-clamp-2"
+            set:html={description}
+        />
+    </div>
 </div>
