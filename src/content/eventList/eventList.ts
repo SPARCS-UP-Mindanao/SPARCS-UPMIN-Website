@@ -10,7 +10,7 @@ export interface TechTixEventData {
   description: string | null;
 }
 
-const TECHTIX_API = import.meta.env.TECHTIX_API + "/events";
+const TECHTIX_API = import.meta.env.PUBLIC_TECHTIX_API + "/events";
 export const fetchEvents = async () => {
   try {
     const response = await fetch(TECHTIX_API);
@@ -98,7 +98,7 @@ export const getEventList = async () => {
     {
       eventId: "7",
       title: "Bugkos 2023",
-      bannerUrl: "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_2.png",
+      bannerUrl: "./img/Bugkos2023.jpeg",
       startDate: "October 14, 2023",
       endDate: "October 15, 2023",
       description:

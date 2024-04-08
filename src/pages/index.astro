@@ -2,16 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Landing from '../components/Landing.astro';
 import WhoAreWe from '../components/WhoAreWe.astro';
-import RecentEvents from '../components/RecentEvents.astro';
 import Partners from '../components/Partners.astro';
 import ContactFooter from '../components/ContactFooter.astro';
+import EventsSection from '../components/EventsSection';
 ---
 
 <Layout title="Welcome to SPARCS.">
 	<main>
 		<Landing/>
 		<WhoAreWe/>
-		<RecentEvents/>
+		<EventsSection client:load client:only/>
 		<Partners/>
 		<ContactFooter/>
 	</main>
