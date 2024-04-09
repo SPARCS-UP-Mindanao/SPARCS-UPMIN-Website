@@ -46,10 +46,10 @@ const RecentEventsCard = ({ event }) => {
         />
       </div>
       <div className="p-2 md:p-3 h-2/6">
-        <h1 className="text-xl md:text-lg mb-1 md:mb-2 font-raleway font-bold text-wrap">
+        <h1 className="text-lg mb-1 md:mb-2 font-raleway font-bold text-wrap">
           {title}
         </h1>
-        <p className="text-sm md:text-md text-gray-500 mb-3">{getDate()}</p>
+        <p className="text-sm md:text-md text-gray-500">{getDate()}</p>
         <div
           className="text-sm md:text-md font-montserrat line-clamp-2"
           dangerouslySetInnerHTML={{ __html: description }}
