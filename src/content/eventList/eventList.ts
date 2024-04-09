@@ -10,7 +10,7 @@ export interface TechTixEventData {
   description: string | null;
 }
 
-const TECHTIX_API = import.meta.env.TECHTIX_API + "/events";
+const TECHTIX_API = import.meta.env.PUBLIC_TECHTIX_API + "/events";
 export const fetchEvents = async () => {
   try {
     const response = await fetch(TECHTIX_API);
@@ -18,8 +18,7 @@ export const fetchEvents = async () => {
     if (!response.ok) {
       throw new Error("Failed to fetch events");
     }
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error("Error fetching events:", error);
     return [];
