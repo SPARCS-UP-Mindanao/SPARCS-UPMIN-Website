@@ -1,4 +1,3 @@
-import React from "react";
 import moment from "moment";
 import Logo from "../../public/logo.png";
 
@@ -40,7 +39,11 @@ const RecentEventsCard = ({ event }) => {
           className="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
           onError={(e) => (e.target.style.display = "none")}
         />
-        {/* Remove the fallback image display logic if unnecessary */}
+        <img
+          src={Logo}
+          alt={`Fallback ${title}`}
+          className="w-full h-full rounded-t-2xl scale-100 hover:scale-125 ease-in duration-100 hover:cursor-pointer object-cover"
+        />
       </div>
       <div className="p-2 md:p-3 h-2/6">
         <h1 className="text-xl md:text-lg mb-1 md:mb-2 font-raleway font-bold text-wrap">

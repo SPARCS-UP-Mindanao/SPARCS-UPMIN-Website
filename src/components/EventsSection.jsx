@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import RecentEventsCard from "./RecentEventsCard";
-import { getEventList } from "../content/eventList/eventList"; // Adjust the import path as necessary
+import { getEventList } from "../content/eventList/eventList";
 
 const EventsSection = () => {
   const [eventList, setEventList] = useState([]);
@@ -19,7 +19,7 @@ const EventsSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-around bg-[#0122BA] px-8 py-12">
+    <section className="min-h-screen flex flex-col bg-[#0122BA] px-8 py-12">
       <h1 className="text-center text-white text-4xl md:text-7xl font-arca">
         Our Events
       </h1>
