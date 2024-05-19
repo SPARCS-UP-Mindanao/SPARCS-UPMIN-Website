@@ -19,7 +19,10 @@ const EventsSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col bg-[#0122BA] px-8 py-12">
+    <section
+      className="min-h-screen flex flex-col bg-[#0122BA] px-8 py-12"
+      id="events"
+    >
       <h1 className="text-center text-white text-4xl md:text-7xl font-arca">
         Our Events
       </h1>
